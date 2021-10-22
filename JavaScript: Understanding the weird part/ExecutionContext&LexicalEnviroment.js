@@ -100,3 +100,23 @@ function d () { // Função armazenada na memoria
 d()
 
 // When a execution context is running all of the others will stop to run till this opened context is running.
+
+///////////////////////// (VARIABLE ENVIROMENT: WHERE THE VARIABLES LIVE) \\\\\\\\\\\\\\\\\\\\\\\\\\
+// and how they relate each other in memory.
+
+function b() {
+    var myVar // Heare we will have undefined beacause we are only creating a variable wich is only exist in this lexical context that hasnt any value.
+} // When b is executed we will comeback to the global context.
+
+function a () {
+    var myVar = 2 // When the function is called this will create a new variable that only exist in this "function a" context.
+    b()
+}
+
+var myVar = 1 // Will be puted in the memory space and assing the value of 1.
+a()
+
+// Even though my var is declare 3 times, all of these variable are distinc, they are unic and dont touch each other.
+
+///////////////////////// (THE SCOPE CHAIN) \\\\\\\\\\\\\\\\\\\\\\\\\\
+
