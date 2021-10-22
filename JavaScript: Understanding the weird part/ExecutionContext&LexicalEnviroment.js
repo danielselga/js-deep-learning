@@ -35,14 +35,14 @@ function b () { // This function is atached to the global object.
 
 }
 
-///////////////////////// (THE EXECUTION CONTEXT: CREATION AND HOISTING) \\\\\\\\\\\\\\\\\\\\\\\\\\
+
 
 // Setup Memory Space for variables and functions "Hoisting"
 
 console.log(a) // Will return undefined because the memory place is reserved but the engine doesnt know the value yek
 b() // This function will execute because when js reads a function brings all the lexical context too, rerading the values inside the function.
 
-const a = 'Hello world' // This variable is atached to the global object.
+// const a = 'Hello world' // This variable is atached to the global object.
 
 function b () { // This function is atached to the global object.
   console.log('Shoot the function.')
@@ -50,10 +50,10 @@ function b () { // This function is atached to the global object.
 
 ///////////////////////// (JAVASCRIPT AND UNDEFINED) \\\\\\\\\\\\\\\\\\\\\\\\\\
 
-const a;
+// const a;
 console.log(a)
 
-a = undefined // Never set this.
+// a = undefined // Never set this.
 
 // Undefined vs not defined -> undefined the memory space is alocated but no value, not define we dont have any space in the memory fot this value.
 
@@ -62,3 +62,41 @@ if (a === undefined) { // Undefined is a special value in js.
 } else {
     console.log('a is defined')
 }
+
+///////////////////////// (THE EXECUTION CONTEXT: CODE EXECUTION) \\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// Code execution:
+function b () {
+    console.log('Shoot the function.') // Read and alocate the values in the memory.
+}
+
+b() // Return the function value.
+
+console.log(a) // Will return undefined because we have the var a but we havent the value yet.
+
+// const a = 'Hello World' // Will set the space in memory
+
+console.log(a) // Will return the value inside the variable.
+
+///////////////////////// (SINGLE THREADED SYNCHRONOUS EXECUTION) \\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// Single threaded: that means one comand will be executed once one time.
+
+// Synchronous: one at the time.
+
+// JavaScript aways will run and execute one time.
+
+///////////////////////// (FUNCTION INVOCATION AND THE EXECUTION STACK) \\\\\\\\\\\\\\\\\\\\\\\\\\
+
+function c () { // Função armazenada na memoria
+ console.log('invoked c') // Quando a função 'c' é chamada ela para a execução da função 'd', assim que ela retornar a função d retorna a execução. 
+}
+
+function d () { // Função armazenada na memoria
+    c() // Chamada da função 'c'
+    console.log('invoked d')
+}
+
+d()
+
+// When a execution context is running all of the others will stop to run till this opened context is running.
