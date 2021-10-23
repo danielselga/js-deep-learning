@@ -211,3 +211,49 @@ waitThreeSeconds()
 // 6) Symbol 
 
 ///////////////////////// (OPERATORS) \\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// OPERATORS: A special function that is syntactically (written) differently, generally operators get 2 params and return 1 result.
+
+const a = 3 + 4 // This is a function running under the hood that returns one value and assing the variable.
++(3,4) 
+
+const b = 3 - 4 
+
+const c = 3 > 1 // Returns the value of true.
+
+console.log(a, b, c)
+
+///////////////////////// (OPERATOR PRECEDENCE AND ASSOCIATIVTY) \\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// OPERATOR PRECEDENCE: Wich operator function gets called frist. Functions are called in order of precedance (HIGHER precedance wins.)
+
+// ASSOCIATIVIITY: What order operator functions get called in: Left-to-Right 
+
+const e = 3 + 4 * 5 // This function will return 23 because multiplication have more precendence than addition.
+
+const a = 2, b = 3, c = 4
+
+a = b = c
+
+console.log(a, b, c) // All the values will be for.
+
+// That happens because of the associativity of the equal assignment that is right-to-left, so b recives c and a recive c, the value of c is 4 that means a and b will be 4 too.
+
+const e = (3 + 4) * 5 // Parenthesis is in the top of precedence that means what in parenthesis will run frist.
+// that means this value will be 35 instead 23.
+
+///////////////////////// (COERSION) \\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// COERSION: Converting a value from one type to another.
+
+// This happens quite often in javascript because its dinamicaly typed.
+
+const a = 1 + '2' //Will return 12 but this value isnt a Number type this plus 2 will onvert 1 to a string and concat.
+
+const a  = 1 + '2' // 12
+
+const b = '1' + 2 // 12
+
+const c = '1' + 2 // 12
+
+const e = 1 + 2 // 4
