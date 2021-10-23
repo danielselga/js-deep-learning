@@ -166,3 +166,24 @@ a()
 // In es6 we have the let, the difence is let only can be access after the value assign, diferent the var that we can access before and get undefined.
 // Let is block scope, only can be access in this block of code, that means we still can access in the outter enviroment.
 
+///////////////////////// (ASYNCHRONOUS CALLBACKS) \\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// ASYNC: More than one at a time.
+
+// Event queue -> all the events are store heare, and when the browser trigger these events the engine will runs the code that is atached on these events.
+// The event queue only will run after the entire code rendered, that means JS still synchronous.
+
+function waitThreeSeconds() {
+    const ms = 3000 + new Date().getTime()
+    while (new Date() < ms){}
+    console.log('finished function')
+}
+
+function clickHandler () {
+    console.log('Click Event')
+}
+
+document.addEventListener('click', clickHandler) // The click event only will be able to be called after the while loop is finished, because events only runs after the execution stack is empty.
+
+waitThreeSeconds()
+
