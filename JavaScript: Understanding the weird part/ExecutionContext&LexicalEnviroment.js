@@ -158,3 +158,11 @@ function a () {
 var myVar = 1
 
 a()
+
+///////////////////////// (SCOPE ES6 AND LET) \\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// Scope: where a variable is avaliable in your code. and if its truly the same variable, or a new copy.
+
+// In es6 we have the let, the difence is let only can be access after the value assign, diferent the var that we can access before and get undefined.
+// Let is block scope, only can be access in this block of code, that means we still can access in the outter enviroment.
+
