@@ -120,3 +120,41 @@ a()
 
 ///////////////////////// (THE SCOPE CHAIN) \\\\\\\\\\\\\\\\\\\\\\\\\\
 
+function b () {
+    console.log(myVar) // This value will be 1 
+    // That happens because if JS doesnt find any reference inside the lexical context JS will look outside the lexical enviroment and look to the global scope.
+    // All of the functions are pointing to the outter enviroment (global scope in this case.). 
+    // The outter enviroment dends where the function is sitted lexicaly.
+    // Remember its sitted not called.
+}
+
+function a () {
+    var myVar = 2
+    b()
+}
+
+var myVar = 1
+
+a()
+
+// SCOPE CHAIN is all the links with outter enviroment and where we access the variables.
+
+// Doesent matter the order that the function is declaed all of them are hoisted what is matter is the scope chain (in other words the scope that variable is declared.)
+
+// Outter enviroment only will be accessed if i dont have any variable declared iside the lexical enviroment.
+
+// Other exemple -> 
+
+function a () {
+ function b () {
+    console.log(myVar) // Now we have the value of 2 because b is chaned inside the lexical enviroment of function a, when the code runs and func a is called the engine will read the lexical enviroment and myVar is in the outter enviroment (func a) that means func b has access to this lexical context and the value of myVar will be 2.
+}
+
+  var myVar = 2
+
+  b()
+}
+
+var myVar = 1
+
+a()
