@@ -1,5 +1,7 @@
 'use strict'
 
+/************************* EXECUTION CONTEXT AND LEXICAL ENVIROMENT *************************/
+
 ///////////////////////// (SYNTAX PARSES - EXECUTION CONTEXT - LEXICAL ENVIROMENT) \\\\\\\\\\\\\\\\\\\\\\\\\\
 
 // SYNTAX PARSER: A program that reads your code and determines what it does and if its grammar valid.
@@ -187,3 +189,25 @@ document.addEventListener('click', clickHandler) // The click event only will be
 
 waitThreeSeconds()
 
+/************************* TYPES AND OPERATORS *************************/
+
+///////////////////////// (TYPES AND JAVASCRIPT) \\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// DYNAMIC TYPING: You don't tell the engine what type of data a variable holds, if figures it out while your code is running.
+
+// Variables can hold diferents types of values because its all figured out during the execution.
+
+// The engine will understand what type of data is readed and indentify the type, this is called dynamic typing.
+
+///////////////////////// (PRIMITIVES TYPES) \\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// PRIMITIVE TYPE: Type of data that represents a single value. thats not an object. JS has 6 types of primitive value.
+
+// 1) Undefined -> represents lack of existence (you shouldnt set a variable to this.)
+// 2) Null -> represents lack of existence (null was created to set an empty value to a varible)
+// 3) Boolean -> True or False.
+// 4) Number -> Floating point number (Theres always some decimals). Unlike other program languages, theres only one 'number' type... and it can make math weird.
+// 5) String -> A sequence of caracters (both '' or "" can be used to represent.)
+// 6) Symbol 
+
+///////////////////////// (OPERATORS) \\\\\\\\\\\\\\\\\\\\\\\\\\
