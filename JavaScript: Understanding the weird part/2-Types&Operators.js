@@ -1,3 +1,4 @@
+'use strict'
 
 /************************* TYPES AND OPERATORS *************************/
 
@@ -129,5 +130,3 @@ null || 'Hello' // Return 'Hello'
 undefined || 'Hello' // Return 'Hello'
 false || 'Hello' // Return 'Hello'
 0 || 1 // Return 1
-
-///////////////////////// (FRAMEWORK ASSIDE: DEFAULT VALUES) \\\\\\\\\\\\\\\\\\\\\\\\\\
