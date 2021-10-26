@@ -257,3 +257,26 @@ const b = '1' + 2 // 12
 const c = '1' + 2 // 12
 
 const e = 1 + 2 // 4
+
+///////////////////////// (COMPARISON OPERATORS) \\\\\\\\\\\\\\\\\\\\\\\\\\
+
+console.log(1 < 2 < 3) // Returns true
+
+console.log(3 < 2 < 1) // Also returns true that happens because the comparsion operator runs left-to-right so will run 3 < 2 frist and return false, after that we will have (false < 1) and then the coersion will convert false to 0 and true to 1, the comparsion will be 0 < 1 and will return true.
+console.log(false < 1) // Converted
+console.log(0 < 1) // Returns true
+
+console.log(3 == 3) // True
+console.log('3' == 3) // Doble-equals coerce types and check equality.
+console.log(false == 0) // Returns true because false is coerce to 0
+var a = false
+console.log(a == 0) // Returns true.
+null == 0 // False
+null < 1 // True
+"" == 0 // True
+"" == false // True
+
+// All of thease code can be fixed using triple-equals "===", this means is strict equals, types, values and dont coerce.
+3 === 3 // True
+"3" === "3" // True
+"3" === 3 // False
