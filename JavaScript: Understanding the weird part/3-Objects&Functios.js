@@ -104,3 +104,65 @@ console.log(typeof jsonToObj) // Object Type
 // CODE: Code property where the actual lines of code that you've hriten sit. That means functions are invokable in our code.
 
 ///////////////////////// (FUNCTIONS STATEMENTS AND FUNCTION EXPRESSIONS) \\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// EXPRESSION: A unit of code that results in a value, it doesnt have to save to a variable.
+
+// Exemple 
+
+// VAR
+const a = 3 // Variable
+
+// EXPRESSION
+1 + 2 // Return 3, this opeartions is an expression, its a peace of code that return value.
+
+// The value INSIDE the parenthesis in the if statement is a expression.
+if (a === 3) {
+    //  Content heare
+}
+
+// FUNCTION STATEMENT
+function greet () {
+    console.log('h1') // When this code runs will return this value to the console.
+}
+
+anonymousGreet() // Anonymous functions can't be called before the code execution.
+
+// FUNCTION EXPRESSION
+const anonymousGreet = function() { // In anonymous functions we store the func in variables, that we mean when we call these variables the engine automaticaly will know where the object is set. 
+    console.log('h1')
+} // The result a anonymous functions creation is an JS Object that be created.
+
+// Functions expressions aren't hoisted
+
+function log (a) {
+    console.log(a)
+}
+
+log(3); // console.log(3)
+const b = 3
+log(b) // console.log(3)
+
+// Passing functiions inside funtions
+
+function log (a) {
+    a()
+}
+
+log(function(){
+    console.log('funtion as a param')
+})
+
+
+///////////////////////// (BY VALUE BY PASSING) \\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// By Value (Primitives)
+const b = a // A is a primitive value and be recives a copy of these value.
+
+// By Passing (Objects)
+const d = {greeting: 'h1'}
+
+const c = d // Instead a copy of the value c will be a reference for the objects. Will be the same space in memory, no copy, is the exactly the object.
+
+c.greeting = 'hello'
+
+console.log(c, d) // Even we use the variable c to change the object we will recive in the b var the greeting of hello, beacuse the space and reference in memory is the same location.
