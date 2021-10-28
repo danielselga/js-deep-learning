@@ -171,3 +171,47 @@ console.log(c, d) // Even we use the variable c to change the object we will rec
 c = {greeting: 'howdy'}
 console.log(c) // Will create a new objc contain 'howdy'
 console.log(d) // Points to the old obj
+
+
+///////////////////////// (OBJECTS FUNCTIONS AND 'THIS') \\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// GLOBAL OBJECT (WINDOW)
+
+// Function statement (global context)
+function a () {
+    console.log(this) // The this variable points to the global (window) object
+    this.newvariable = 'hello'
+}
+
+// Functions expressions
+const b = function () {
+    console.log(this) // Even in the anonymous functions lexical enviroment the this keyword will be point to the global object.
+}
+
+a()
+
+console.log(newvariable)
+
+b()
+
+// OBJECT REFERENCE
+
+const c = {
+    name: 'the c object',
+    log: function () {
+        const self = this; // If we set inside the this keyword inside a variable the parent lexical enviroment and agregate to a child functions this variable and point to the object. 
+
+        console.log(this)
+        const setName = function(newName) {
+            console.log(self) // THIS WILL POINT TO THE OBJECT. because we are geting the reference from the parent lexical enviroment.
+            this.name = newName // A function or expression inside an object the THIS keyword will point to the global object (window) even its the expression is running inside an object.
+        }
+
+        setName('Updated agn, the c object')
+        console.log(this)
+    },
+}
+
+c.log() // Heare we can access the object because the this keyword inside an object is a reference for the object itself.
+
+// The this keyword depends of 2 contexts, inside an object or the global lexical enviroment.
