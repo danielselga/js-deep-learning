@@ -166,3 +166,8 @@ const c = d // Instead a copy of the value c will be a reference for the objects
 c.greeting = 'hello'
 
 console.log(c, d) // Even we use the variable c to change the object we will recive in the b var the greeting of hello, beacuse the space and reference in memory is the same location.
+
+// Equals operator sets up a new memory space (new address)
+c = {greeting: 'howdy'}
+console.log(c) // Will create a new objc contain 'howdy'
+console.log(d) // Points to the old obj
