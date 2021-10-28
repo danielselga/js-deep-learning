@@ -1,13 +1,12 @@
-function waitThreeSeconds() {
-    const ms = 3000 + new Date().getTime()
-    while (new Date() < ms){}
-    console.log('finished function')
+const objectLiteral = {
+	fristName: 'Daniel',
+	isProgrammer: true
 }
 
-function clickHandler () {
-    console.log('Click Event')
-}
+const objToJson = JSON.stringify(objectLiteral)
+console.log(objToJson) // return a JSON
+console.log(typeof objToJson) // String Type
 
-document.addEventListener('click', clickHandler)
-
-waitThreeSeconds()
+const jsonToObj = JSON.parse(objToJson)
+console.log(jsonToObj) // Return a JS Object
+console.log(typeof jsonToObj) // Return a JS Object
