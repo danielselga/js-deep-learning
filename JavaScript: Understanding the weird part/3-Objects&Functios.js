@@ -257,3 +257,101 @@ greet('Daniel', 'Doe', 'EN / PTBR') // All of theses functions will runing that 
 greet('Daniel', 'Doe', 'EN / PTBR', 'Main st', '111') // If we set the spread operator we can create new params in the call of the function.
 
 ///////////////////////// (FUNCTIONS OVERLOADING) \\\\\\\\\\\\\\\\\\\\\\\\\\
+
+function greet (fristName, lastName, language) {
+    language = language || 'en'
+     
+    if(language === 'en') {
+        console.log(`Hello ${fristName} ${lastName}`)
+    } else if (language === 'es') {
+        console.log(`Holla ${fristName} ${lastName}`)
+    }
+}
+
+const greetEnglish = (fristName, lastName) => {
+    greet(fristName, lastName, 'en')
+}
+
+const greetSpanish = (fristName, lastName) => {
+    greet(fristName, lastName, 'es')
+}
+
+// In JS we wont need to take care about funtion overloading.
+
+greetEnglish('Daniel', 'Selga') // Return Hello
+
+greetSpanish('Daniel', 'Selga') // Return Holla
+
+///////////////////////// (SYNTAX PARSER) \\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// SYNTAX PARSER: is part of Javascript engine. It reads your code character by character, tells what your code does, and check if the grammar is correct or not.
+
+///////////////////////// (AUTOMATIC SEMICOLON INSERTION) \\\\\\\\\\\\\\\\\\\\\\\\\\
+
+function getPerson () {
+    return // JS will put an automatic SEMICOLON heare and return the funtions with undefined.
+    {
+        fristName: 'Daniel' // Return undefined
+    }
+}
+
+console.log(getPerson()) 
+
+///////////////////////// (WHITESPACE) \\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// WHITESPACE: Invisible caracters that create literal 'SPACE' in your written code.
+
+// (Carriages returns, tabs, space)
+
+// Coments heare about fristName
+const fristName, 
+// Extra space to comment or write something
+lastName, 
+// my language
+language 
+// The code still runs the same, the syntax parser ignore all of these white spaces.
+
+const person = {
+    //Frist name
+    name: 'Daniel',
+
+    // The last name (Always required)
+    lastName: 'Selga'
+}
+
+console.log(person)
+
+///////////////////////// (IMMEDIATLY INVOKED FUNCTION EXPRESSIONS (IFFE)S) \\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// Function statement
+function greet(name) {
+ console.log('Hello' + ' ' + name)
+}
+    
+greet('Daniel')
+    
+// Function Expression 
+const greetFunc = (name) => {
+    console.log('Hello' + '' + name)
+}
+
+greetFunc('Daniel')
+
+// Invoking functions on the fly.
+
+const greeting = function(name) {
+    console.log('Hello' + '' + name)
+
+}('Daniel'); // Invoking the function imediatly (IIFE)
+
+const fristName = 'Daniel'
+
+(function(name) {
+
+    const greeting = 'Inside IFFE: Hello'
+    return greeting + '' + name // Will return imediatly an string.
+})(fristName); // We only use parenthesis in expressions (anon functions) beacause pharetesis is an operator that execute expressions.
+
+
+
+
