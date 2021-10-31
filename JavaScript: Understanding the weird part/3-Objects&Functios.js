@@ -215,3 +215,45 @@ const c = {
 c.log() // Heare we can access the object because the this keyword inside an object is a reference for the object itself.
 
 // The this keyword depends of 2 contexts, inside an object or the global lexical enviroment.
+
+///////////////////////// (ARRAYS COLLETIONS OF ANYTHING) \\\\\\\\\\\\\\\\\\\\\\\\\\
+
+var arr = new Array() // Array creation
+
+const litArr = [1 , 2, 3] // Array literals
+
+arr[1] // Geting the element inside the array, return the value inside the index called.
+
+var arrCollection = [1 ,false, {name: tony, address: 'mainst'}, function(name) {console.log(name)}, "Hello"] // We can store any type of properties.
+
+///////////////////////// ('ARGUMENTS' AND SPREADS) \\\\\\\\\\\\\\\\\\\\\\\\\\
+
+// ARGUMENTS: The paramethers you pass to a function, JavaScript gives you a keyword of the same name which contains them all.
+
+function greet(fristName, lastName, language = 'en', ...others) { // In arguments we can pass a default value.
+    // Other way to pass default value.
+    language = language || 'en'
+
+    // With the 'arguments' keyword we can hardcode a guard to verify if all the arguments are passed.
+    if(arguments.length === 0) {
+        console.log('Missing paramethers')
+        console.log('----------')
+        return
+    }
+    
+    console.log(fristName)
+    console.log(lastName)
+    console.log(language)
+    console.log(arguments) // This is a reserved keyword that return an array of all the values inside the arguments.
+    console.log('--------------')
+}
+
+greet() // All of the values return undefined and log the '----'
+
+greet('Daniel') // Return daniel and 2 undefineds and log the '----'
+greet('Daniel', 'Doe')
+greet('Daniel', 'Doe', 'EN / PTBR') // All of theses functions will runing that means in JS we can skip paramethers and the empty arguments values will be undefined.
+
+greet('Daniel', 'Doe', 'EN / PTBR', 'Main st', '111') // If we set the spread operator we can create new params in the call of the function.
+
+///////////////////////// (FUNCTIONS OVERLOADING) \\\\\\\\\\\\\\\\\\\\\\\\\\
