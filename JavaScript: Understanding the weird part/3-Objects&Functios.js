@@ -352,6 +352,104 @@ const fristName = 'Daniel'
     return greeting + '' + name // Will return imediatly an string.
 })(fristName); // We only use parenthesis in expressions (anon functions) beacause pharetesis is an operator that execute expressions.
 
+///////////////////////// (UNDERSTANDING CLOSURES) \\\\\\\\\\\\\\\\\\\\\\\\\\
 
+function greet (whattosay) {
+    return function name (name) { // Retruning a function
+        console.log(whattosay + name)
+    }
+}
 
+greet('hi')('Daniel') // Invoking a function returned of other function.
 
+const sayHi = greet('hi') // if we Set a funtions that returns a function to a variable we can invoke that variable (like a function) and the value will be the returned function.
+
+sayHi('Daniel')
+
+// Build functions (closure)
+function buildFunctions() {
+    const arr = []
+
+    for(let i = 0; i <3 ; i++) {
+        arr.push(
+            function () { // Creating functions and pushing to the array.
+                console.log(i)
+            }
+        )
+    }
+}
+
+const fs = buildFunctions()
+
+// Invoking functions inside the arrays.
+fs[0]() // 3
+fs[1]() // 3
+fs[2]() // 3
+// All of these functions will return 3 because all of them are pointed to the same space memory which the engine keep alive.
+
+function buildFunctions2() {
+    const arr = []
+    
+    for(let i = 0; i <3 ; i++) {
+        let j = i
+        arr.push(
+            function () { // Creating functions and pushing to the array.
+                console.log(j)
+            }
+        )
+    }
+}
+
+const fs = buildFunctions()
+
+// Invoking functions inside the arrays.
+fs[0]() // 1
+fs[1]() // 2
+fs[2]() // 3
+// Now this funcions we can get the expected value, because we are pointing to a variable that have the value alive inside the engine.
+
+///////////////////////// (FUNCTION FACTORIES) \\\\\\\\\\\\\\\\\\\\\\\\\\
+
+function makeGreeting(language) { // Factory functions
+
+    return function (fristName, lastName) {
+        if(language === 'en') {
+            console.log(`Hello ${fristName} ${lastName}`)
+        } else if (language === 'es') {
+            console.log(`Holla ${fristName} ${lastName}`)
+        } // Taking advantage to closures to return some expected value.
+    }
+
+}
+
+const greetEnglish = makeGreeting('en')
+const greetEspanish = makeGreeting('es') 
+
+greetEnglish('Daniel', 'Selga')
+
+///////////////////////// (CLOSURES AND CALLBACKS) \\\\\\\\\\\\\\\\\\\\\\\\\\
+
+function sayHiLatter () {
+    const greeting = 'hi'
+
+    setTimeout(function() {
+        console.log(greeting)
+    }, 3000)
+}
+
+sayHiLatter()
+
+// CALLBACK FUNCTION: A function you give to another function to be run when the other function is finished.
+
+// So the function you call (invoke, 'calls back' by calling the function you gave it when it finishes.
+
+function tellmeWhenDone (callback) {
+    const a = 1000
+    const b = 2000 //Some work
+
+    callback() // Caling the function passed as an argument
+}
+
+tellmeWhenDone(function() {
+    alert('function done')
+})
