@@ -238,7 +238,3 @@ function logNewPerson() {
 }
 
 // Strict mode article: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
-
-/************************* EXAMINING FAMOUS FRAMEWORKS AND LIBRARIES *************************/
-
-///////////////////////// (LEARNING FROM OTHERS GOOD CODE) \\\\\\\\\\\\\\\\\\\\\\\\\\
