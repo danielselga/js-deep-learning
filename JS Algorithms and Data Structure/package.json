@@ -1,0 +1,8 @@
+{
+  "devDependencies": {
+    "standard": "^16.0.4"
+  },
+  "scripts": {
+    "test": "standard && node my-tests.js"
+  }
+}

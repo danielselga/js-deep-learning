@@ -10,7 +10,7 @@
 
 // When JavaScript sees the return keyword or when the function ends, the compiler will remove (pop).
 
-// WHY DO I CARE? 
+// WHY DO I CARE?
 
 // You're used functions being pushed on the call stack and popped off when they're done.
 
@@ -23,38 +23,38 @@
 // Base case: the condition when the recursion ends.
 // This is the most important concept to understand.
 
-// Two essentials parts of a recursive function! 
+// Two essentials parts of a recursive function!
 // BASE CASE
 // DIFERENT INPUTS
 
 // Recursive function exemple:
 function countDown (num) {
-	if(num < 0) { // BASE CASE
-		console.log('All done!') 
-		return
-	}
+  if (num < 0) { // BASE CASE
+    console.log('All done!')
+    return
+  }
 
-	console.log(num)
-	num-- // Decresing one inside the param
-	countDown(num) // Caling the same function till our if statement.
+  console.log(num)
+  num-- // Decresing one inside the param
+  countDown(num) // Caling the same function till our if statement.
 }
 
 /* OUR SECOND RECURSIVE FUNCTION */
 
-function sumRange(num) {
-	if(num === 1) return 1;
-	return num + sumRange(num-1)
-} 
+function sumRange (num) {
+  if (num === 1) return 1
+  return num + sumRange(num - 1)
+}
 
 /* WRITING FACTORIAL ITERATIVELY */
 
 function factorial (num) {
-	let total = 1
-	for(let i = num; i > 0; i--) {
-		total *= i
-	}
+  let total = 1
+  for (let i = num; i > 0; i--) {
+    total *= i
+  }
 
-	return total
+  return total
 }
 
 factorial(4) // Non recursive solution of factorial.
@@ -62,8 +62,8 @@ factorial(4) // Non recursive solution of factorial.
 /* WRITING FACTORIAL RECURSIVELY */
 
 function factorialRec (num) {
-	if(num === 1) return 1;
-	return num * factorial(num-1)
+  if (num === 1) return 1
+  return num * factorial(num - 1)
 }
 
 factorialRec(5)
@@ -76,61 +76,58 @@ factorialRec(5)
 
 // -> Forgetting to return or returning the wrong thing.
 
-// -> Stack overflow (not the website). 
+// -> Stack overflow (not the website).
 
 /* HELPER METHOD RECURSION */
 
 // PATTERN
 function outer (input) {
+  const outerScopedVariable = []
 
-	var outerScopedVariable = []
+  function helper (helperInput) { // Recursive function
+    helper(helperInput--)
+  }
 
-	function helper (helperInput) { // Recursive function
-		helper(helperInput--) 
-	}
+  helper(input)
 
-	helper(input)
-
-	return outerScopedVariable
-} 
+  return outerScopedVariable
+}
 
 // Another exemple: Colect odds.
 
 function collectOddsValues (arr) {
-	let result = []
+  const result = []
 
-	function helper(helperInput) {
-		if(helperInput.length === 0) {
-			return;
-		}
+  function helper (helperInput) {
+    if (helperInput.length === 0) {
+      return
+    }
 
-		if(helperInput[0] % 2 !== 0) {
-			result.push(helperInput[0])
-		}
+    if (helperInput[0] % 2 !== 0) {
+      result.push(helperInput[0])
+    }
 
-		helper(helperInput.splice(1))
-	}
+    helper(helperInput.splice(1))
+  }
 
-	helper(arr)
+  helper(arr)
 
-	return result
+  return result
 }
 
 /* PURE RECURSION */
 
-function collectOddValues(arr) {
-	let newArr = []
-	if(arr.length === 0) return newArr;
+function collectOddValues (arr) {
+  let newArr = []
+  if (arr.length === 0) return newArr
 
-	if(arr[0] % [2] !== 0) {
-		newArr.push(arr[0])
-	}
+  if (arr[0] % [2] !== 0) {
+    newArr.push(arr[0])
+  }
 
-	newArr = newArr.concat(collectOddValues(arr.slice(1)))
-	return newArr
-
+  newArr = newArr.concat(collectOddValues(arr.slice(1)))
+  return newArr
 }
 
 // PURE RECURSION TIPS
 // For arrays, use methods like slice, the spread operator, and concat that make copies of arrays so you do not mutate them.
-

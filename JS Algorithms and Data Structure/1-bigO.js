@@ -15,7 +15,6 @@
 // 3) Acessing element in an array (by index) or object (by key) is constant.
 // In a loop the the complexity is the length of the loop times the complexity of wahtever happens insside the loop.
 
-
 // Space complexity
 // So far we've been focusing on time complexity: how we can analyze the runtime of an alforithm as the size of the inputs increase?
 // We can also use big O notation to analyze space complexity: how much additional memory do we need to allocate in order to run the code in our algorithm.
@@ -25,4 +24,3 @@
 // 1) Most primitives (booleans, numbers, undefined, null) are constant space. Desent matter the number the space will be the same.
 // 2) Strings require O(n) Space (where n is the string lenght.)
 // 3) Reference tyes are generaly O(n), where n is the length (for arrays) or the number of keys (for objects)
-
