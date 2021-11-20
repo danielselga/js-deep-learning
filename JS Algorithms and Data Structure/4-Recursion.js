@@ -80,5 +80,57 @@ factorialRec(5)
 
 /* HELPER METHOD RECURSION */
 
+// PATTERN
+function outer (input) {
 
+	var outerScopedVariable = []
+
+	function helper (helperInput) { // Recursive function
+		helper(helperInput--) 
+	}
+
+	helper(input)
+
+	return outerScopedVariable
+} 
+
+// Another exemple: Colect odds.
+
+function collectOddsValues (arr) {
+	let result = []
+
+	function helper(helperInput) {
+		if(helperInput.length === 0) {
+			return;
+		}
+
+		if(helperInput[0] % 2 !== 0) {
+			result.push(helperInput[0])
+		}
+
+		helper(helperInput.splice(1))
+	}
+
+	helper(arr)
+
+	return result
+}
+
+/* PURE RECURSION */
+
+function collectOddValues(arr) {
+	let newArr = []
+	if(arr.length === 0) return newArr;
+
+	if(arr[0] % [2] !== 0) {
+		newArr.push(arr[0])
+	}
+
+	newArr = newArr.concat(collectOddValues(arr.slice(1)))
+	return newArr
+
+}
+
+// PURE RECURSION TIPS
+// For arrays, use methods like slice, the spread operator, and concat that make copies of arrays so you do not mutate them.
 
