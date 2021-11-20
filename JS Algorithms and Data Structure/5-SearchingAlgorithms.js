@@ -167,7 +167,7 @@ function binarySearch (arr, el) {
     } else {
       start = middle + 1
     }
-    middle = Math.floor((start + end) / 2)
+    // middle = Math.floor((start + end) / 2) (eslinter enchendo o saco)
   }
   if (arr[middle] === el) {
     return middle
@@ -176,3 +176,9 @@ function binarySearch (arr, el) {
 }
 
 binarySearch([2, 5, 6, 9, 13, 15, 28, 30], 15)
+
+/* BINARY SEARCH BIG O */
+
+// What about big O?
+// O log(n) -> worst and average  case.
+// O(1) -> best case.
