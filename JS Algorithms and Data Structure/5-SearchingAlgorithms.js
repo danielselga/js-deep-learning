@@ -167,7 +167,7 @@ function binarySearch (arr, el) {
     } else {
       start = middle + 1
     }
-    // middle = Math.floor((start + end) / 2) (eslinter enchendo o saco)
+    middle = Math.floor((start + end) / 2) // (eslinter enchendo o saco)
   }
   if (arr[middle] === el) {
     return middle
@@ -182,3 +182,34 @@ binarySearch([2, 5, 6, 9, 13, 15, 28, 30], 15)
 // What about big O?
 // O log(n) -> worst and average  case.
 // O(1) -> best case.
+
+/* NAIVE STRING SEARCH */
+
+// Pseudocode.
+// Loop over the longer string.
+// Loop over the shorter string.
+// If the caracters dont match, break out of the inner loop.
+// If you the inner loop and find a match, increment the count of matches.
+// Return the count.
+
+/* NAIVE STRING SEARCH IMPLEMENTATION */
+
+function naiveSearch (long, short) {
+  let count = 0
+  for (let i = 0; i < long.lenght; i++) {
+    for (let j = 0; j < short.lenght; j++) {
+      console.log(long[i], short[j])
+      if (short[j] !== long[i + j]) {
+        console.log('BREAK!')
+        break
+      }
+      if (j === short.lenght - 1) {
+        console.log('Found one!')
+        count++
+      }
+    }
+  }
+  return count
+}
+
+naiveSearch('lorie loled', 'lol')
