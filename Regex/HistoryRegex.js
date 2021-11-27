@@ -21,7 +21,8 @@ const txt = 'Programing courses always sarts with a hello world example.'
 
 // RegExp Methods
 
-console.log(regex1.test(txt)) // Prototype method, that retuns a boolean checking the pattern is inside the text.
+// Prototype method, that retuns a boolean checking the pattern is inside the text.
+console.log(regex1.test(txt))
 console.log(regex2.test(txt))
 
 // Return one array which contains the index inside of the pattern inside the txt, the input and the groups.
@@ -45,3 +46,24 @@ console.log(txt.split(regex1))
 // Most cummon usage of split with Regex
 const regex3 = /\s/ // represent the pattern of a space value.
 console.log(txt.split(regex3)) // Will separate every single word of the array.
+
+// Understanding Regex flags
+// /pattern/flags or new RegExp("pattern", "flags")
+// Flags must come after the pattern
+
+// Cummons flags
+// g - global, match more than one occourance, if you dont use global only will match one elemnt.
+// i - case insensitive, case don't matter.
+// m - multi-line match.
+
+const regex4 = /s\s/gi // g flag will return all the 's ' inside an array and the i flag will ignore case sentive.
+console.log(txt.match(regex4))
+
+// The global flag using exec will give us access to all s inside the text, they will be referenced by order of call
+console.log(regex4.exec(txt)) // Return the frist 's '
+console.log(regex4.exec(txt)) // Return the second 's '
+console.log(regex4.exec(txt)) // Return the third 's '
+console.log(regex4.exec(txt)) // Null, because we only have 3 in our txt.
+
+// Using Regexpal
+// www.regexpal.com
