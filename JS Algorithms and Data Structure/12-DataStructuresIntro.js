@@ -25,3 +25,11 @@
 
 // Need to write a scheduler?
 // USE BINARY HEAP!
+
+/* ES2015 CLASS SYNTAX OVERVIEW */
+
+// What is a class?
+// A blueprint for creating objects with pre-defined properties and methods.
+
+// Why does we need to learn this?
+// We're going to implement data strucutures as classes!
