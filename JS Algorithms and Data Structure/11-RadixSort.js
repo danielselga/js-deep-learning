@@ -45,3 +45,17 @@ mostDigits([123, 3454, 645467, 36, 457])
 // Place each number in the corresponding bucket based on its kth digit.
 // Replace our existing array with values in our buckets, starting with 0 and going up to 9
 // Return the list at the end!
+
+/* RADIXSORT IMPLEMENTATION */
+function radixSort (nums) {
+  let maxDigitsCounts = mostDigits(nums) // Will return the big value of digits inside the array element.
+  for (let k = 0; k < maxDigitsCounts; k++) {
+    let digitBuckets = Array.from({ length: 10 }, () => []) // Array.from() is a method that expects an object as 1st param which must contains the length and a 2nd param that is a callback function that will be the content of the array.
+    // We use this method to create the 10 buckets.
+    for (let i = 0; i < nums.length; i++) {
+      let digit = getDigit(nums[i], k)
+      digitBuckets[digit].push(nums[i])
+    }
+    nums = [].concat(...digitBuckets) // Grouping all the arrays.
+  }
+}
