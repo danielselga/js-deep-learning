@@ -33,6 +33,8 @@ console.log(regex2.exec(txt))
 console.log(txt.match(regex1))
 console.log(txt.match(regex2))
 
+// Exec and match methods if used a regex with the GLOBAL flag will return an array of all elements that 'match'.
+
 // Returns the index of the pattern inside the txt.
 console.log(txt.search(regex1))
 console.log(txt.search(regex2))
