@@ -33,3 +33,62 @@
 
 // Why does we need to learn this?
 // We're going to implement data strucutures as classes!
+
+/* DATA STRUCUTRES: THE CLASS KEYWORDS */
+
+// The syntax
+class Student {
+  constructor (fristName, lastName, year) {
+    this.fristName = fristName
+    this.lastName = lastName
+    this.year = year
+    this.tardies = 0
+    this.scores = []
+  }
+
+  fullname () {
+    return `Your fullname is ${this.fristName} ${this.lastName}`
+  }
+
+  markLate () {
+    this.tardies++
+    if (this.tardies >= 3) {
+      return 'YOU ARE EXPELED!!!'
+    }
+    return `${this.fristName} ${this.lastName} has been late ${this.tardies}`
+  }
+
+  addScores (score) {
+    this.scores.push(score)
+    return this.scores
+  }
+
+  calculateAverage () {
+    return this.scores.reduce((a, b) => (a + b) / this.scores.length)
+  }
+}
+
+// The method to create new objects must be called constructor.
+// The class keyword creates a constant so you can not redefine it. Watch out for the syntax as well.
+
+const student1 = new Student('Daniel', 'Selga', 1997)
+const student2 = new Student('Gege', 'Calil', 1998)
+
+console.log(student1)
+console.log(student2.fullname())
+
+/* DATA STRUCTURES: ADDING INSTANCE METHODS */
+
+console.log(student1.tardies)
+console.log(student1.markLate())
+console.log(student1.tardies)
+console.log(student1.markLate())
+console.log(student1.markLate())
+console.log(student1.markLate())
+console.log(student1.tardies)
+console.log(student2.addScores(92))
+console.log(student2.addScores(87))
+console.log(student2.scores)
+console.log(student2.calculateAverage())
+
+/* DATA STRUCTURES: ADDING CLASS METHODS */
