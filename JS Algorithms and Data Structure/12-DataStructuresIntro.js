@@ -92,3 +92,44 @@ console.log(student2.scores)
 console.log(student2.calculateAverage())
 
 /* DATA STRUCTURES: ADDING CLASS METHODS */
+
+// Static methods
+// A static keyword defines a static method for a class. Static methods are called without instantiating their class and cannot be called throught a class instance. Static methods are often used to create utility functions for an application.
+
+class Student2 {
+  constructor (fristName, lastName, year) {
+    this.fristName = fristName
+    this.lastName = lastName
+    this.year = year
+    this.tardies = 0
+    this.scores = []
+  }
+
+  fullname () {
+    return `Your fullname is ${this.fristName} ${this.lastName}`
+  }
+
+  static enrolStudents (...students) {
+    // Maybe send a email heare.
+  }
+}
+
+// Searching the distance between two points in a cartesian plan using static method
+class Point {
+  constructor (x, y) {
+    this.x = x
+    this.y = y
+  }
+
+  static distance (a, b) {
+    const dx = a.x - b.x
+    const dy = a.y - b.y
+
+    return Math.hypot(dx, dy)
+  }
+}
+
+const p1 = new Point(5, 5)
+const p2 = new Point(10, 10)
+
+console.log(Point.distance(p1, p2))
