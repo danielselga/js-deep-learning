@@ -27,9 +27,23 @@ const hello = /hello/
 
 // EXERCISE 1
 // Return all numbers that start with 801 area code.
+
+// Personal solution
 const phoneNums = ['801-766-9754', '801-545-5454', '435-666-1212', '801-796-8010', '435-555-9801', '801-009-0909', '435-222-8013', '801-777-6655']
 const codeAreaPattern = /801-...-..../g
-
-const txt = [...phoneNums].toString().replace(/,/g, ' ')
-
+const txt = phoneNums.toString().replace(/,/g, ' ')
 console.log(txt.match(codeAreaPattern))
+
+// Teacher solution
+const regEx = /801-/g
+// const newArray = phoneNums.filter(el => regEx.test(el)) Dont work theacher is noob xd jk
+// console.log(newArray)
+
+const newArray = []
+for (let i = 0; i < phoneNums.length; i++) {
+  if (regEx.test(phoneNums[i])) {
+    newArray.push(phoneNums[i])
+  }
+}
+
+console.log(newArray)
