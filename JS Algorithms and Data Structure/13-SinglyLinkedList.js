@@ -101,6 +101,61 @@ class SinglyLinkedList {
     }
     return current
   }
+
+  // Shift pseudocode
+  // If there are no nodes, return undefined.
+  // Store the current head property in a variable.
+  // Set the head property to be the current head's next property.
+  // Decrement the leght by 1.
+  // Return the value of the node removed.
+
+  shift () { // Shift -> Removing a new Node from the beginning of the linked list.
+    if (!this.head) { return undefined }
+    const currentHead = this.head
+    this.head = currentHead.next
+    this.length--
+    if (this.length === 0) {
+      this.tail = null
+    }
+    return currentHead
+  }
+
+  // Unshift pseudocode
+  // This function should accept a value.
+  // If there is no head property on the list, set the head and tail to be the newly created one.
+  // Otherwise set the newly created node's next property to be the current head property on the list.
+  // Set the head property on the list to be that newly created node.
+  // Increment the lenght of the list by 1.
+  // Return the linked list.
+
+  unshift (val) { // unshift -> Adding a new Node to the beginning of the linked list.
+    const newNode = new Node(val)
+    if (!this.head) {
+      this.head = newNode
+      this.tail = this.head
+    } else {
+      newNode.next = this.head
+      this.head = newNode
+    }
+    this.length++
+    return this
+  }
+
+  // Get pseudocode
+  // This function should accept an index.
+  // If the index is less than 0 or greater than or iqual to the length of the list, return null.
+  // Loop through the list until you reach the index and return the node at that especific index.
+
+  get (index) { // get -> retriving a node by it's position in the linked list.
+    if (index < 0 || index >= this.length) { return null }
+    let counter = 0
+    let current = this.head
+    while (counter !== index) {
+      current = current.next
+      counter++
+    }
+    return current
+  }
 }
 
 // Hardcoded
@@ -110,8 +165,9 @@ frist.next.next = new Node('how')
 frist.next.next.next = new Node('are')
 frist.next.next.next.next = new Node('you')
 
-// Push method
 const list = new SinglyLinkedList()
+
+// Push method
 list.push('hello')
 list.push('goodbye')
 list.push('see')
@@ -119,3 +175,8 @@ list.push('!')
 
 console.log(list.pop())
 console.log(list)
+console.log(list.shift())
+console.log(list)
+console.log(list.unshift('teste'))
+console.log(list)
+console.log(list.get(1))
