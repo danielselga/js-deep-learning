@@ -182,7 +182,29 @@ class SinglyLinkedList {
   // Icrement lenght.
   // Return true.
 
-  insert () { // insert -> Adding a node to the linked list at a specific position.
+  insert (index, val) { // insert -> Adding a node to the linked list at a specific position.
+    if (index < 0 || index > this.length) { return false }
+    if (index === this.length) { return !!this.push(val) }
+    if (index === 0) { return !!this.unshift(val) }
+    const newNode = new Node(val)
+    const prev = this.get(index - 1)
+    const temp = prev.next
+    prev.next = newNode
+    newNode.next = temp
+    this.length++
+    return true
+  }
+
+  // Remove pseudocode
+  // If the index is less than zero or greater than the lenght, return undefined.
+  // If the index is the same as the lenght - 1, pop.
+  // If the index is 0, shift.
+  // Otherwise, using the get method, access the node at the index -1.
+  // Set the next property on that node to be the next of the next node.
+  // Decrement the length.
+  // Return the value of the node removed.
+
+  remove () { // remove -> removing a node from the linked list at a specific position
 
   }
 }
