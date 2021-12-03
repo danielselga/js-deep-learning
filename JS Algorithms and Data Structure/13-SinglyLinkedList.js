@@ -204,8 +204,58 @@ class SinglyLinkedList {
   // Decrement the length.
   // Return the value of the node removed.
 
-  remove () { // remove -> removing a node from the linked list at a specific position
+  remove (index) { // remove -> Removing a node from the linked list at a specific position
+    if (index < 0 || index >= this.length) {
+      return undefined
+    }
 
+    if (index === 0) {
+      return this.shift()
+    }
+
+    if (index === this.lenght - 1) {
+      return this.pop
+    }
+
+    const previousNode = this.get(index - 1)
+    const removed = previousNode.next
+    previousNode.next = removed.next
+    this.length--
+    return removed
+  }
+
+  // Reverse pseudocode
+  // Swap the head and tail.
+  // Create a variable called next.
+  // Create a variable called prev.
+  // Create a variable called node and initialize it to the head property.
+  // Loop through the list.
+  // Set next to be the next property on whatever node is.
+  // Set the next property on the node to be whatever prev is.
+
+  reverse () { // reverse -> Reversing the linked list in place.
+    let node = this.head
+    this.head = this.tail
+    this.tail = node
+    let next = null
+    let prev = null
+
+    for (let i = 0; i < this.length; i++) {
+      next = node.next
+      node.next = prev
+      prev = node
+      node = next
+    }
+    return this
+  }
+
+  print () { // Show me the entire list inside an array.
+    const arr = []
+    let current = this.head
+    while (current) {
+      arr.push(current.val)
+      current = current.next
+    }
   }
 }
 
