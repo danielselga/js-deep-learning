@@ -281,3 +281,7 @@ console.log(list)
 console.log(list.unshift('teste'))
 console.log(list)
 console.log(list.get(1))
+
+// SINGLY LINKED LIST
+// Are an exellent alternative to arrays, when insertion and deletion at the beginning are frequently required.
+// Array contains contain a built in index, whereas linked list do not.
