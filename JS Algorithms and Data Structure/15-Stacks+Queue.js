@@ -176,3 +176,14 @@ class Queue {
     return temp.value
   }
 }
+
+// BigO of queue
+// Insertion O(1)
+// Removal O(1)
+// Searching O(N)
+// Access O(N)
+
+// Recap
+// Queues are FIFO data structure, all elements are frist in frist out.
+// Queues are useful for processing tasks and are fundational for more complex data structures.
+// Insertion and removal can be done in O(1)
