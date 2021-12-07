@@ -24,3 +24,11 @@
 // Routing (the history object) is treated like a stack.
 
 // There is more than one way of implementing a stack.
+
+// Array implementation
+const stack = []
+stack.push('google.com')
+stack.push('instagram.com')
+stack.push('youtube.com')
+stack.pop()
+// Just push and pop to be a stack.
