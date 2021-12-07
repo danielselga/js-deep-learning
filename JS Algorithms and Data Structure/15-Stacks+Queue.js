@@ -88,6 +88,7 @@ class Node {
   		this.last = null
   	}
   	this.frist = this.frist.next
-  	returm temp.value
+  	this.size--
+  	return temp.value
   }
 }
