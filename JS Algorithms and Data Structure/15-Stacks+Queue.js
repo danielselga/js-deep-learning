@@ -80,15 +80,25 @@ class Node {
   // Return the value of the node removed.
 
   pop () {
-  	if (!this.frist) {
-  		return null
-  	}
-  	const temp = this.frist
-  	if (this.frist === this.last) {
-  		this.last = null
-  	}
-  	this.frist = this.frist.next
-  	this.size--
-  	return temp.value
+    if (!this.frist) {
+      return null
+    }
+    const temp = this.frist
+    if (this.frist === this.last) {
+      this.last = null
+    }
+    this.frist = this.frist.next
+    this.size--
+    return temp.value
   }
 }
+
+// BigO of stacks
+// Insertion o(n)
+// removal o(n)
+// Searching o(n)
+// Access o(n)
+
+// Recap
+// Stacks are LIFO data structure where the last value in is always the frist one out.
+// Stacks are used to handle function invocations (the call stack), for operations like undo/redo, and for routing (remember pages you have visited and go back/foward) and much more!
