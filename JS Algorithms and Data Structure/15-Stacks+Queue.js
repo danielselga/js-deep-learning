@@ -22,3 +22,5 @@
 // Managing funtion invokations.
 // Undo / Redo
 // Routing (the history object) is treated like a stack.
+
+// There is more than one way of implementing a stack.
