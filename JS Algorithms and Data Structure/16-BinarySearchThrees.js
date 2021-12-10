@@ -37,6 +37,24 @@ class BinarySearchThree {
   constructor () {
     this.root = null
   }
+
+  // Inserting pseudocode
+  // Create a new Node.
+  // Starting at the root.
+  // Check if there is a root, if not the root now becomes that new Node.
+  // If there is a root, check if the value of the new Node is greater than or less than the value of the root.
+  // If its greater.
+  // Check to see if there is a node to the right.
+  // If there is, move to that node and repeat these steps.
+  // If there is not, add that node as the right property.
+  // If it less.
+  // Check to see if there is a node to the left.
+  // If there is, move that node and repeat these steps.
+  // If there is not, add that node as the left property.
+
+  inserting () {
+
+  }
 }
 
 class Node {
@@ -46,3 +64,9 @@ class Node {
     this.right = null
   }
 }
+
+const three = new BinarySearchThree()
+three.root = new Node()
+three.root.right = new Node(15)
+three.root.left = new Node(7)
+three.root.left.right = new Node(9)
