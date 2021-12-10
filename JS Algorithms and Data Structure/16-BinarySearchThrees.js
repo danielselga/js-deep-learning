@@ -30,3 +30,4 @@
 // Every Node to the right of a parent Node is always greater than the parent.
 
 // Binary search three
+// Works with sort data or sortable data that you can compare things.
