@@ -31,3 +31,18 @@
 
 // Binary search three
 // Works with sort data or sortable data that you can compare things.
+
+// THE BINARY SEARCH THREE CLASS
+class BinarySearchThree {
+  constructor () {
+    this.root = null
+  }
+}
+
+class Node {
+  constructor (value) {
+    this.value = value
+    this.left = null
+    this.right = null
+  }
+}
