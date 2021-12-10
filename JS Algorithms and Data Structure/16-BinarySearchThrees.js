@@ -52,8 +52,31 @@ class BinarySearchThree {
   // If there is, move that node and repeat these steps.
   // If there is not, add that node as the left property.
 
-  inserting () {
-
+  inserting (value) {
+    const newNode = new Node(value)
+    if (this.root === null) {
+      this.root = newNode
+      return this
+    } else {
+      let current = this.root
+      while (true) {
+        if (value === current.value) return undefined
+        if (value < current.value) {
+          if (current.left === null) {
+            current.left = newNode
+            return this
+          } else {
+            current = current.left
+          }
+        } else if (value > current.value) {
+          if (current.right === null) {
+            current.right = newNode
+          } else {
+            current = current.right
+          }
+        }
+      }
+    }
   }
 }
 
