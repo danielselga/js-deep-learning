@@ -55,3 +55,9 @@
 // Invoke the helper function with the current variable.
 
 // SOLUTION INSIDE THE BINARY THREE (16 FILE).
+
+// RECAP
+// Threes are non-linear data strucutures that contains a root  and child nodes.
+// Binary threes can have values of any type, but at most two children for each parent.
+// Binary search three are most specifics version of binary threes where every node to the left of a parent is less than it's value and every node to the right is greater.
+// We can search through trees using BFS and DFS.
