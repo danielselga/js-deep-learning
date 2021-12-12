@@ -131,3 +131,7 @@ three.root = new Node()
 three.root.right = new Node(15)
 three.root.left = new Node(7)
 three.root.left.right = new Node(9)
+
+// BigO of BST
+// Insertion O(logN)
+// Searching O(logN)
