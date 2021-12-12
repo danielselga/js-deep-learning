@@ -12,3 +12,9 @@
 
 // Binary heaps are used to implement Priority Queues, which are very commonly used data structures.
 // They are also used quite a bit, with graph traversal algorithms.
+
+// Storing heaps
+// Index (inside the array) * 2 + 1 -> to get the left child
+// 2n + 1 -> left
+// Index (inside the array) * 2 + 2 -> to get the right child
+// 2n + 2 -> right
