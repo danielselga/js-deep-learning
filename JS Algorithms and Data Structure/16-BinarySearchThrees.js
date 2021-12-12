@@ -94,7 +94,7 @@ class BinarySearchThree {
   // If there is, move to that node and repeat these steps.
   // If there is not, we're done searching.
 
-  insert (value) {
+  find (value) {
 
   }
 }
