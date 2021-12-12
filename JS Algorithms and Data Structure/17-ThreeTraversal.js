@@ -18,7 +18,7 @@
 
 // SOLUTION INSIDE THE BINARY THREE (16 FILE).
 
-// Depth-frist search intro
+// Depth-frist PreOrder search intro
 
 // Steps - recursively ->
 // Create a variable to store the values of nodes visited.
@@ -29,5 +29,29 @@
 // If the node has a right property, call the helper function with the right property on the node.
 // Invoke the helper function with the current variable.
 // Return the array of values.
+
+// SOLUTION INSIDE THE BINARY THREE (16 FILE).
+
+// Depth-frist PostOrder
+
+// Depth-frist PostOrder pseudocode
+// Create a variable to store the values of nodes visited.
+// Store the root of the BST (Binary search tree) in a variable called current.
+// Write a helper funtion which accepts a node ->
+// If the node has a left property, call the helper funtion with the left property on the node.
+// If the node has a right property, call the helper function with the right property on the node.
+// Push the value of the node to the variable that stores the values.
+// Invoke the helper function with the current variable.
+
+// SOLUTION INSIDE THE BINARY THREE (16 FILE).
+
+// Depth-frist InOrder pseudocode
+// Create a variable to store the values of nodes visited.
+// Store the root of the BST (Binary search tree) in a variable called current.
+// Write a helper funtion which accepts a node ->
+// If the node has a left property, call the helper funtion with the left property on the node.
+// Push the value of the node to the variable that stores the values.
+// If the node has a right property, call the helper function with the right property on the node.
+// Invoke the helper function with the current variable.
 
 // SOLUTION INSIDE THE BINARY THREE (16 FILE).
