@@ -145,6 +145,35 @@ class BinarySearchThree {
     }
     return data
   }
+
+  // Depth-frist sreach pseudocode
+  // Create a variable to store the values of nodes visited.
+  // Store the root of the BST (Binary search tree) in a variable called current.
+  // Write a helper funtion which accepts a node ->
+  // Push the value of the node to a variable that stores the values.
+  // If the node has a left property, call the helper funtion with the left property on the node.
+  // If the node has a right property, call the helper function with the right property on the node.
+  // Invoke the helper function with the current variable.
+  // Return the array of values.
+
+  dfsPreOrder () {
+    const data = []
+
+    function traverse (node) {
+      data.push(node)
+
+      if (node.left) {
+        traverse(node.left)
+      }
+
+      if (node.right) {
+        traverse(node.right)
+      }
+    }
+
+    traverse(this.root)
+    return data
+  }
 }
 
 class Node {
