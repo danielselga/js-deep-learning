@@ -61,5 +61,3 @@
 // Binary threes can have values of any type, but at most two children for each parent.
 // Binary search three are most specifics version of binary threes where every node to the left of a parent is less than it's value and every node to the right is greater.
 // We can search through trees using BFS and DFS.
-
-// teste
