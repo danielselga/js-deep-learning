@@ -19,24 +19,118 @@
 // Index (inside the array) * 2 + 2 -> to get the right child
 // 2n + 2 -> right
 
-// Insert pseudocode
-// Push the value into the values property on the heap.
-// Bubble the value up to its correct spot.
-// Bubble up ->
-// Create a variable called index which is the length of the values property - 1.
-// Create a variable called parentIndex which is the floor of (index-1)/2.
-// Keep looping as long as the values element at the parentIndex is less than the values element at the child index.
-// Swap the value of the values element at the parentIndex with the value of the element propert at the child index.
-// Set the index to be the parentIndex, and start over!
-
 class MaxBinaryHeap {
-  constructor() {
-    this.values = [];
-  }
+	constructor() {
+		this.values = [41, 39, 33, 18, 27, 12];
+	}
 
-  insert(element) {
-      this.values.push(element)
-      this.bubbleUp()
-  }
+	// Insert pseudocode
+	// Push the value into the values property on the heap.
+	// Bubble the value up to its correct spot.
+	// Bubble up ->
+	// Create a variable called index which is the length of the values property - 1.
+	// Create a variable called parentIndex which is the floor of (index-1)/2.
+	// Keep looping as long as the values element at the parentIndex is less than the values element at the child index.
+	// Swap the value of the values element at the parentIndex with the value of the element propert at the child index.
+	// Set the index to be the parentIndex, and start over!
+
+	insert(element) {
+		this.values.push(element)
+		this.bubbleUp()
+	}
+
+	bubbleUp() {
+		let index = this.values.length - 1
+		const element = this.values[index]
+
+		while (index > 0) {
+			let parentIndex = Math.floor((index - 1) / 2)
+			let parent = this.values[parentIndex]
+
+			if (element <= parent) {
+				break;
+			}
+
+			this.values[parentIndex] = element
+			this.values[index] = parent
+			index = parentIndex
+		}
+	}
+
+	// Removing from a heap
+	// Remove the root
+	// Replace with the most recently added.
+	// Adjust (sink down)
+
+	// Sink Down
+	// The procedure for deleting the root from the heap (effectively extracting the maximumelement in a max-heap or the minimum element in a min heap) and restore the properties is called down-heap (aka bubble-down, heapfy-down, sift-down)
+
+	// Extract Max pseudocode
+	// Swap the frist value in the values property with the last one.
+	// Pop from the values property, so you can return the value at the end.
+	// Have the root "sink down" to the correct spot.
+	// Your parent index starts at 0 (the root).
+	// Find the index of the left child: 2 * index + 1 (make sure its not out of bounds).
+	// Find the index of the right child: 2 * index + 2 (make sure its not out of bounds).
+	// If the left or right child is greater than the element ... swap. If both left and right children are larger, swap with the largest child.
+	// The child index you swapped to now becomes the new parent index.
+	// Keep looping and swapping until neither child is larger than the element.
+	// Return the old root.
+
+	extractMax() {
+		const max = this.values[0]
+		const end = this.values.pop()
+		if (this.values.length > 0) {
+			this.values[0] = end
+			this.sinkDown()
+		}
+		return max
+	}
+
+	sinkDown() {
+		let index = 0
+		const length = this.values.length
+		const element = this.values[0]
+
+		while (true) {
+			let leftChildIndex = 2 * index + 1
+			let rigthChildIndex = 2 * index + 2
+			let leftChild, rightChild
+			let swap = null
+
+			if (leftChildIndex < length) {
+				leftChild = this.values[leftChildIndex]
+				if (leftChild > element) {
+					swap = leftChildIndex
+				}
+			}
+
+			if (rigthChildIndex < length) {
+				rightChild = this.values[rigthChildIndex]
+				if (swap === null && rightChild > element ||
+					(swap !== null && rightChild > leftChild)
+				) {
+					swap = rigthChildIndex
+				}
+			}
+
+			if (swap === null) {
+				break;
+			}
+
+			this.values[index] = this.values[swap]
+			this.values[swap] = element
+			index = swap
+		}
+	}
 }
 
+
+let heap = new MaxBinaryHeap()
+heap.insert(55)
+
+// Building a prority queue.
+
+// What is a pririty queue
+// A data strucuture where each element has a prority.
+// Elements with higher priorities are served before elements with lower priorities.
