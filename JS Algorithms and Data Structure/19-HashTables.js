@@ -16,3 +16,22 @@
 // What makes a good hash?
 // Fast (i.e constant time)
 // Doesn't cluster outputs at specific indices, but distribute uniformly.
+
+// Hash function exemple (only works with strings)
+
+function hash(key, arrayLen) {
+    let total = 0
+    for (let char of key) {
+        let value = char.charCodeAt(0) - 96
+        total = (total + value) % arrayLen
+    }
+}
+
+hash("pink", 10)
+hash("purple", 3)
+
+// Refining our hash
+// Only hashes strings (we wont worry about this)
+// Not constant time - linear in key length
+// Could be a little more random
+
