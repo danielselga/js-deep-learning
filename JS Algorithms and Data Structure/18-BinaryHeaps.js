@@ -129,10 +129,29 @@ class MaxBinaryHeap {
 let heap = new MaxBinaryHeap()
 heap.insert(55)
 
+// PRIORITY QUEUE INTRO
+
 // Building a prority queue.
 
 // What is a pririty queue
 // A data strucuture where each element has a prority.
 // Elements with higher priorities are served before elements with lower priorities.
 
-// teste
+// A naive solution
+// Use a list to store all elements
+// Iterate over the entire thing to find the highest priority element.
+
+// Val doesn't matter. Heap is constructed using prority.
+
+// Our priority queue 
+// Write a Min Binary Heap - lower numbers means higher priority.
+// Each node has a val and a priority. Use the priority to build the heap.
+// Enqueue method accepts a value and priority, makes a new node, and puts it in the right spot based off of its priority.
+// Dequeue method removes root element, returns it and rearranges heap using priority.
+
+class priorityQueue {
+	constructor() {
+		this.values
+	}
+}
+
