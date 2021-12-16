@@ -246,3 +246,8 @@ ER.enqueue('high fever', 2)
 // Insertion O (logN)
 // Removal O (logN)
 // Search O(N)
+
+// Recap
+// Binary heaps are very useful data strucutures for sorting, and implementating other data structures like priority queues.
+// Binary heaps are either MaxBinaryHeaps or MinBinaryHeaps with parents either being smaller or larger than their children.
+// With a little bit of math we can represent them using arrays.
