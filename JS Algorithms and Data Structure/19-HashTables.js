@@ -134,6 +134,24 @@ class HashTable {
     return undefined;
   }
 
+  // Keys
+
+  // Loop through the hash table array and returns an array of keys in the table.
+
+  keys() {
+    let keysArr = [];
+    for (let i = 0; i < this.keyMap.length; i++) {
+      if (this.keyMap[i]) {
+        for (let j = 0; j < this.keyMap[i].length; j++) {
+          if (!keysArr.includes(this.keyMap[i][j][0])) {
+            keysArr.push(this.keyMap[i][j][0]);
+          }
+        }
+      }
+    }
+    return keysArr;
+  }
+
   // Values
 
   // Loop thgough the hash table array and returns an array of values in the table.
@@ -143,7 +161,9 @@ class HashTable {
     for (let i = 0; i < this.keyMap.length; i++) {
       if (this.keyMap[i]) {
         for (let j = 0; j < this.keyMap[i].length; j++) {
-          valuesArr.push(this.keyMap[i][j]);
+          if (!valuesArr.includes(this.keyMap[i][j][1])) {
+            valuesArr.push(this.keyMap[i][j][1]);
+          }
         }
       }
     }
@@ -154,8 +174,3 @@ class HashTable {
 let ht = new HashTable();
 
 ht.set("Hello world", "goodbye");
-
-// Keys and Values
-
-// Keys
-// Loop through the hash table array and returns an array of keys in the table.
