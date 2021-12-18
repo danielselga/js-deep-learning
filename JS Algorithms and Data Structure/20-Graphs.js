@@ -20,3 +20,11 @@
 // Visual Hierarchy
 // File system optimization
 // EVERYWHERE!
+
+// Types of graphs
+
+// Vertex -> is a node
+// Edge -> conection between nodes
+// Weighted/Unwheighted -> values assigned to distances between vertices
+// Directed / Undirected -> directions assigned to distanced between vertices
+
