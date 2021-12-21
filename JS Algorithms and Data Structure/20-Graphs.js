@@ -178,4 +178,35 @@ class graph {
 		}
 		return result
 	}
+
+	// Breadth frist pseudocode
+
+	// This function should accept a starting vertex
+	// Create a queue (you can use one array) and place the starting vertex in it
+	// Create an array to store the nodes visited
+	// Mark the starting vertex as visited
+	// Loop as long as there is anything in the queue
+	// Remove the frist vertex form the queue and push it into the array that stores nodes visited
+	// Loop over each vertex in the adjacency list for the vertex you are visiting
+	// If it is not inside the object that stores nodes visited, mark it as visited and enqueue that vertex
+	// Once you have finished looping, return the array of visited nodes
+
+	breadthFrist (start) {
+		const queue = []
+		const result = []
+		const visited = {}
+		visited[start] = true
+
+		while(queue.length) {
+			let currentVertex = queue.shift()
+			result.push(currentVertex)
+
+			this.adjacencyList[currentVertex].slice().reverse().forEach(neighbor => {
+				if (!visited[neighbor]) {
+					visited[neighbor] = true
+					queue.push(neighbor)
+				}
+			})
+		}
+	}
 }

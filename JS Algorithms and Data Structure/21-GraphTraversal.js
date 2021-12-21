@@ -13,7 +13,7 @@
 // Solving mazes
 // AI (shortest path to win the game)
 
-// Deph frist search
+// depth frist search
 // Explore as far as possible down one branch before "backtracking"
 
 // DFS Pseudocode recursive
@@ -66,3 +66,20 @@
 // mark it as visited
 // Add it to the result list
 // Push all of it neighbors into the stack
+
+// SOLUTION IN FILE 20
+
+// Breadth frist
+// Visit neighbors at current depth frist!
+
+// Breadth frist pseudocode
+
+// This function should accept a starting vertex
+// Create a queue (you can use one array) and place the starting vertex in it
+// Create an array to store the nodes visited
+// Mark the starting vertex as visited
+// Loop as long as there is anything in the queue
+// Remove the frist vertex form the queue and push it into the array that stores nodes visited
+// Loop over each vertex in the adjacency list for the vertex you are visiting
+// If it is not inside the object that stores nodes visited, mark it as visited and enqueue that vertex
+// Once you have finished looping, return the array of visited nodes
