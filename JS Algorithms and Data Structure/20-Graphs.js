@@ -68,20 +68,20 @@ class graph {
     }
   }
 
-	// Removing a vertex
-	// This function should accept a vertex to remove
-	// This function should loop as long there are any other vertices in the adjacency list for that vertice
-	// Inside the loop, call the removeEdge function with the vertex we are removing and any values in the adjacency list for that vertex
-	// Delete the key in the adjacency list for that vertex
+  // Removing a vertex
+  // This function should accept a vertex to remove
+  // This function should loop as long there are any other vertices in the adjacency list for that vertice
+  // Inside the loop, call the removeEdge function with the vertex we are removing and any values in the adjacency list for that vertex
+  // Delete the key in the adjacency list for that vertex
 
-	removeVertex(vertex) {
-		while (this.adjacencyList[vertex].length) {
-			const adjacentVertex = this.adjacencyList[vertex].pop()
-			this.removeEdge(vertex, adjacentVertex)
-		}
-		
-		delete this.adjacencyList[vertex]
-	}
+  removeVertex(vertex) {
+    while (this.adjacencyList[vertex].length) {
+      const adjacentVertex = this.adjacencyList[vertex].pop();
+      this.removeEdge(vertex, adjacentVertex);
+    }
+
+    delete this.adjacencyList[vertex];
+  }
 
   // Adding edges
   // This function should accept two arguments, we call them vertex1 and vertex2
@@ -95,13 +95,50 @@ class graph {
 
   // Removing edge
   // This function should accept two vertices, we'll call them vertex1 and vertex2.
-	// The function should reassing the key of vertex1 to be an array that does not contain vertex2
-	// The function should reassing the key of vertex2 to be an array that does not contain vertex1
-	// Don't worry about handling errors/invalid vertices. 
+  // The function should reassing the key of vertex1 to be an array that does not contain vertex2
+  // The function should reassing the key of vertex2 to be an array that does not contain vertex1
+  // Don't worry about handling errors/invalid vertices.
 
-	removeEdge(vertex1, vertex2) {
-		this.adjacencyList[vertex1] = this.adjacencyList[vertex1].filter(vertex => vertex !== vertex2)
+  removeEdge(vertex1, vertex2) {
+    this.adjacencyList[vertex1] = this.adjacencyList[vertex1].filter(
+      (vertex) => vertex !== vertex2
+    );
 
-		this.adjacencyList[vertex2] = this.adjacencyList[vertex2].filter(vertex => vertex !== vertex1)
-	}
+    this.adjacencyList[vertex2] = this.adjacencyList[vertex2].filter(
+      (vertex) => vertex !== vertex1
+    );
+  }
+
+  // DEPTH FRIST TRAVERSAL (DETAILED PSEUDOCODE)
+
+  // The function should accept a starting node
+  // Create a list to store the end result, to be returned at the very end
+  // Create an object to store your visited vertices
+  // Create a helper function which accepts a vertex
+  // The helper function should return early if the vertex is empty
+  // The helper function should place the vertex it accepts into the visited object and push that vertex into the result array
+  // Loop over all of the values in the adjacencyList for that vertex
+  // If any of those values have not been visited recursively invoke the helper function with that vertex
+  // Invoke the helper function with the starting vertex
+  // Return the result array
+
+  depthFristRecursive() {
+    const result = [];
+    const visited = {}
+	
+	(function dfs(vertex) {
+      if (!vertex) {
+        return null;
+      }
+      visited[vertex] = true;
+      result.push(vertex);
+      this.adjacencyList[vertex].forEach((neighbor) => {
+        if (visited[neighbor]) {
+          return dfs(neighbor);
+        }
+      });
+    })(start).bind(this.adjacencyList);
+
+	return result
+  }
 }
