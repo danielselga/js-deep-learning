@@ -37,3 +37,4 @@
     // The helper function should place the vertex it accepts into the visited object and push that vertex into the result array
     // Loop over all of the values in the adjacencyList for that vertex
     // If any of those values have not been visited recursively invoke the helper function with that vertex
+// Invoke the helper function with the starting vertex
