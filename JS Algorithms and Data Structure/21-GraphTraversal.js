@@ -13,7 +13,7 @@
 // Solving mazes
 // AI (shortest path to win the game)
 
-// Deph frist traversal
+// Deph frist search
 // Explore as far as possible down one branch before "backtracking"
 
 // DFS Pseudocode recursive
@@ -41,3 +41,28 @@
 // Return the result array
 
 // SOLUTION IN FILE 20
+
+// DFS Iterative pseudocode
+
+// DFS-Iterative (start): 
+// let s be a stack
+// S.push(start)
+// Wile S not empty
+// Vertex = S.pop()
+// If vertex is not labeled as discovered:
+// Visit vertex (add to result list)
+// label vertex as discovered
+// for each of vertex's neighbors, N do S.push(N)
+
+// DEPTH FRIST TRAVERSAL ITERATIVE (DETAILED PSEUDOCODE)
+// The function should accept a starting node
+// Create a stack to help use keep track of vertices (use a list / array)
+// Create a list to store the end result, to be returned at the very end
+// Create an object to store visited vertices
+// Add the starting vertex to the stack, and mark it visited
+// While the stack has something in it ->
+// Pop the next vertex from the stack
+// If that vertex hasn't been  visited yet ->
+// mark it as visited
+// Add it to the result list
+// Push all of it neighbors into the stack
