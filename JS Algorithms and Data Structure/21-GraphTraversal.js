@@ -38,3 +38,4 @@
     // Loop over all of the values in the adjacencyList for that vertex
     // If any of those values have not been visited recursively invoke the helper function with that vertex
 // Invoke the helper function with the starting vertex
+// Return the result array
