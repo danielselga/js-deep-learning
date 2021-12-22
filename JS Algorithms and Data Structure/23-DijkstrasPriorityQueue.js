@@ -1,3 +1,5 @@
+/* DIJKSTRAS ALGORITHM V2 */
+
 class WeightedGraph {
   constructor() {
     this.adjacencyList = {};
