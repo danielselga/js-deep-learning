@@ -49,3 +49,9 @@ let re = /12\-5/g
 
 // Not work
 let nt = /[10-20]/g
+
+// Excluding a character set (^)
+let re = /[^0-9A-F]/ // If we use the ^ symbol will exclude (unmatch) all matches from the string.
+
+// Escaping the exclusion character
+let re = /[\^a-z]/
