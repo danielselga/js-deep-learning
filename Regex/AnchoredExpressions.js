@@ -7,3 +7,8 @@
 
 // Word boundary
 // \b Word Boundary - Pattern bounded by a non-word character
+// \B Nonword boundary - Pattern bounded by a word character
+
+// References position, not an actual character.
+// Word characters: \w or [a-zA-Z0-9_] -> Underscore is a part of a word character
+
