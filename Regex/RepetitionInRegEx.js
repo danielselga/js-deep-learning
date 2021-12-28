@@ -5,6 +5,7 @@
 
 // By default regex are greedy they go as many they can.
 
-
-
-
+// Specifying Repetition Amount 
+// {min, max} Matches min to max accurrences
+// {min} matches min occurrences
+// {min,} matches min or more occurrences
