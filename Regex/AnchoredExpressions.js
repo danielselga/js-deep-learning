@@ -30,7 +30,7 @@ At the Tuesday staff meeting, you will need to make a report on the past weeks p
 and you will receive assignments for the following Tuesday. Just be aware that somedays this 
 Tuesday meeting might not occur. When that happens, we will make an announcement.`
 
-let reg = /\b[mtwfs][a-z]{1,4}[nsir]\b/gi
+let reg = /\b[mtwfs][a-z]{1,4}[nsir]day\b/gi
 
 let newText = text1.replace(reg, 'Monday')
 
