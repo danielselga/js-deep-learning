@@ -37,3 +37,13 @@ console.log(year, month, day)
 // By default groups are capturing
 
 // To uncapturing groups we use the (?:)
+
+let re = /(?:abc)/
+
+// Positive lookahead
+
+let re = /\w+(?=.com)/gi // Regex to get all characters before '.com'
+
+// Lookahead grups usage
+
+let re = /^(?={8,})(?=.*[a-z])(?=.*[0-9]).*$/ // Regex to passwords, these grupes forces the string to have 8 or more characters and uppercase letters.
