@@ -33,3 +33,7 @@ if (reDate.test(date)) {
 }
 
 console.log(year, month, day)
+
+// By default groups are capturing
+
+// To uncapturing groups we use the (?:)
