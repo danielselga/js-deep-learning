@@ -10,5 +10,8 @@ let regEmail2 = /^[^\s@]+@[^\s@.]+\.com$/ // More complete case, using ignored s
 
 let regEmail3 = /^[^\s@]+@[^\s@.]+\.[^\s@.]+[^\s@]+$/ // PT-BR Case, if the user have .com.something this match too.
 
-// Matching a twitter handler
+// Matching a twitter name
 
+let twitterName = '@danielselgadev'
+
+let regTwitter = /^@?(\w+)$/ // Using capturing grups for easily store in js
