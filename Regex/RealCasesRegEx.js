@@ -40,3 +40,12 @@ function testPassword(pass) {
 }
 
 testPassword(password)
+
+// Using replace with Regex
+
+// Organizing names
+const names = ["Smith, James", "Peterson, Alyssa", "Johnson, Lynette", "Lopez, Tony"];
+
+const newNames = names.map(function(name) {
+    return name.replace(/(\w+), (\w+)/, "$2 $1") // $2 represent the second capturing group and $1 represent the frist capturing group.
+})
