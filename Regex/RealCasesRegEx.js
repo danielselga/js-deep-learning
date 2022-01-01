@@ -49,3 +49,10 @@ const names = ["Smith, James", "Peterson, Alyssa", "Johnson, Lynette", "Lopez, T
 const newNames = names.map(function(name) {
     return name.replace(/(\w+), (\w+)/, "$2 $1") // $2 represent the second capturing group and $1 represent the frist capturing group.
 })
+
+
+// Validating dates (dd/mm/yyyy, dd/mm/yy)
+
+const regDate = /^(3[01]|[12][0-9]|0?[1-9])(\/)(1[0-2]|0?[1-9])(\/)([0-9]{2})?[0-9]{2}$/
+
+let date = '25/06/1997'
